@@ -1,0 +1,27 @@
+---
+- name: Show examples
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+  - name: GATHERING FACTS
+    ios_facts:
+      gather_subset: hardware
+
+  - name: run show version
+    ios_command:
+      commands: show version
+    register: version
+  
+  - name: display version
+    debug:
+      var: version["stdout_lines"][0]
+
+  - name: run show ip int brief
+    ios_command:
+      commands: show ip interface brief
+    register: interfaces
+
+  - name: display interfaces
+    debug:
+      var: interfaces["stdout_lines"][0]

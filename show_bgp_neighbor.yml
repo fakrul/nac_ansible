@@ -1,0 +1,17 @@
+---
+- name: show bgp neighbor status 
+  hosts: routers
+  gather_facts: no
+  vars_files:
+    - "secrets/vault.yml"
+
+  tasks:
+  - name: show bgp neighbor status {{ ansible_host }}
+    ios_command:
+      commands: show bgp ipv4 unicast summary
+    register: bgp_neighbor
+  
+  - name: display neighbor status {{ ansible_host }}
+    debug:
+      #var: version["bgp_neighbor"][0]
+      var=bgp_neighbor
