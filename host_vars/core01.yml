@@ -1,0 +1,52 @@
+---
+hostname: core01
+domain_name: alam.rocks
+router_id: 100.100.100.1
+rtr_role: core
+
+bgp:
+  local_as: 65534
+  redist:
+    ospf: true
+    ospfv3: true
+  neighbors:
+    ipv4:
+     - peer: 100.100.100.2
+       remote_as: 65534
+       ibgp: true
+       update_source: Loopback0
+       default_originate: true
+    ipv6:
+     - peer: "2001:db8:901:beef::2"
+       remote_as: 65534
+       ibgp: true
+       update_source: Loopback0
+
+interfaces:
+  - ios_if: "GigabitEthernet0/0"
+    desc: "core01-aggr01"
+    enabled: true
+    ipv4: "100.100.10.1/30"
+    ipv6: "2001:db8:201::a/64"
+    ospf:
+      area: "0.0.0.0"
+    ospfv3:
+      area: "0.0.0.0"
+
+  - ios_if: "GigabitEthernet0/1"
+    desc: "core01-internet"
+    enabled: true
+    ipv4: "dhcp"
+
+  - ios_if: "loopback0"
+    desc: "Loopback"
+    enabled: true
+    ipv4: "100.100.100.1/32"
+    ipv6: "2001:db8:901:beef::1/128"
+    ospf:
+      area: "0.0.0.0"
+      passive: true
+    ospfv3:
+      area: "0.0.0.0"
+      passive: true
+

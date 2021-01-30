@@ -1,2 +1,9 @@
 ---
-# tasks file for common
+# tasks file for roles/common
+
+- name: Include Nameserver 
+  include: nameserver.yml
+- name: Include NTP 
+  include: ntp.yml
+- name: Include SNMP 
+  include: snmp.yml  

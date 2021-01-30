@@ -1,0 +1,9 @@
+---
+- hosts: routers
+  gather_facts: no
+  vars_files:
+    - "secrets/vault.yml"
+
+  tasks:
+  - import_role:
+      name: common

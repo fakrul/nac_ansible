@@ -1,0 +1,14 @@
+---
+- hosts: routers
+  gather_facts: no
+  vars_files:
+    - "secrets/vault.yml"
+
+  tasks:
+  - import_role:
+      name: interfaces
+  - import_role:
+      name: routing
+  - name: save running to startup when modified
+    ios_config:
+      save_when: modified

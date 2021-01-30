@@ -1,0 +1,8 @@
+{% for interface in interfaces %}
+{% if interface['subint'] is defined %}
+{% for vlan in interface['subint']['vlans'] %}
+interface {{ interface['ios_if'] }}.{{ vlan }}
+ encapsulation dot1q {{ vlan }}
+{% endfor %}
+{% endif %}
+{% endfor %}
