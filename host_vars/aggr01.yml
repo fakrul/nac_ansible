@@ -1,0 +1,54 @@
+---
+hostname: aggr01
+domain_name: alam.rocks
+router_id: 100.100.100.2
+rtr_role: aggr
+
+bgp:
+  local_as: 65534
+  redist:
+    ospf: true
+    ospfv3: true
+  neighbors:
+    ipv4:
+     - peer: 100.100.100.1
+       remote_as: 65534
+       ibgp: true
+       update_source: Loopback0
+       default_originate: true
+    ipv6:
+     - peer: "2001:db8:901:beef::1"
+       remote_as: 65534
+       ibgp: true
+       update_source: Loopback0
+
+interfaces:
+  - ios_if: "GigabitEthernet0/0"
+    desc: "aggr01-core01"
+    enabled: true
+    ipv4: "100.100.10.2/30"
+    ipv6: "2001:db8:201::f/64"
+    ospf:
+      area: "0.0.0.0"
+      passive: true
+    ospfv3:
+      area: "0.0.0.0"
+      passive: true
+
+  - ios_if: "GigabitEthernet0/1"
+    desc: "server_block"
+    enabled: true
+    ipv4: "100.100.250.1/24"
+
+  - ios_if: "loopback0"
+    desc: "Loopback"
+    enabled: true
+    ipv4: "100.100.100.2/32"
+    ipv6: "2001:db8:901:beef::2/128"
+    ospf:
+      area: "0.0.0.0"
+      passive: true
+    ospfv3:
+      area: "0.0.0.0"
+      passive: true
+

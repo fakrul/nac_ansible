@@ -27,13 +27,13 @@ interfaces:
     desc: "core01-aggr01"
     enabled: true
     ipv4: "100.100.10.1/30"
+    ipv6: "2001:db8:201::a/64"
     ospf:
       area: "0.0.0.0"
       passive: true
     ospfv3:
       area: "0.0.0.0"
       passive: true
-
 
   - ios_if: "GigabitEthernet0/1"
     desc: "core01-internet"

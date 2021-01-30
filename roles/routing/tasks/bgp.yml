@@ -1,0 +1,157 @@
+---
+# tasks file for routing
+#
+- name: Configure BGP - eBGP v4 peers
+  ios_bgp:
+    config:
+      bgp_as: "{{ bgp['local_as'] }}"
+      log_neighbor_changes: True
+      router_id: "{{ router_id }}"
+      neighbors:
+      - neighbor: "{{ item.peer }}"
+        remote_as: "{{ item.remote_as }}"
+  when: 
+    - bgp is defined
+    - bgp.neighbors is defined
+    - bgp.neighbors.ipv4 is defined
+    - item.ebgp is defined
+  loop: "{{ bgp.neighbors.ipv4 }}"
+  tags:
+  - bgp
+  - bgp_v4
+
+- name: Configure BGP - eBGP v6 peers
+  ios_bgp:
+    config:
+      bgp_as: "{{ bgp['local_as'] }}"
+      log_neighbor_changes: True
+      router_id: "{{ router_id }}"
+      neighbors:
+      - neighbor: "{{ item.peer }}"
+        remote_as: "{{ item.remote_as }}"
+      address_family:
+        - afi: ipv6
+          neighbors:
+          - neighbor: "{{ item.peer }}"
+            activate: true
+  when: 
+    - bgp is defined
+    - bgp.neighbors is defined
+    - bgp.neighbors.ipv6 is defined
+    - item.ebgp is defined
+  loop: "{{ bgp.neighbors.ipv6 }}"
+  tags:
+  - bgp
+  - bgp_v6
+
+- name: Configure BGP - iBGP v4 peers
+  ios_bgp:
+    config:
+      bgp_as: "{{ bgp['local_as'] }}"
+      log_neighbor_changes: True
+      router_id: "{{ router_id }}"
+      neighbors:
+      - neighbor: "{{ item.peer }}"
+        remote_as: "{{ item.remote_as }}"
+        update_source: "{{ item.update_source }}"
+  when: 
+    - bgp is defined
+    - bgp.neighbors is defined
+    - bgp.neighbors.ipv4 is defined
+    - item.ibgp is defined
+  loop: "{{ bgp.neighbors.ipv4 }}"
+  tags:
+  - bgp
+  - bgp_v4
+
+- name: Configure BGP - iBGP v6 peers
+  ios_bgp:
+    config:
+      bgp_as: "{{ bgp['local_as'] }}"
+      log_neighbor_changes: True
+      router_id: "{{ router_id }}"
+      neighbors:
+      - neighbor: "{{ item.peer }}"
+        remote_as: "{{ item.remote_as }}"
+        update_source: "{{ item.update_source }}"
+      address_family:
+        - afi: ipv6
+          neighbors:
+          - neighbor: "{{ item.peer }}"
+            activate: true
+  when: 
+    - bgp is defined
+    - bgp.neighbors is defined
+    - bgp.neighbors.ipv6 is defined
+    - item.ibgp is defined
+  loop: "{{ bgp.neighbors.ipv6 }}"
+  tags:
+  - bgp
+  - bgp_v6
+
+- name: Configure BGP - Redistribute OSPF
+  ios_bgp:
+    config:
+      bgp_as: "{{ bgp['local_as'] }}"
+      address_family:
+        - afi: ipv4
+          redistribute:
+            - protocol: ospf
+              id: 1
+  when: 
+    - bgp is defined
+    - bgp.redist is defined
+    - bgp.redist.ospf is defined
+  tags:
+  - bgp
+  - bgp_v4
+
+- name: Configure BGP - Redistribute OSPFv3
+  ios_bgp:
+    config:
+      bgp_as: "{{ bgp['local_as'] }}"
+      address_family:
+        - afi: ipv6
+          redistribute:
+            - protocol: ospf
+              id: 1
+  when: 
+    - bgp is defined
+    - bgp.redist is defined
+    - bgp.redist.ospfv3 is defined
+  tags:
+  - bgp
+  - bgp_v6
+
+- name: Configure BGP - Redistribute OSPFv3 and include connected networks
+  ios_config:
+    lines:
+      - redistribute ospf 1 include-connected
+    parents:
+      - router bgp {{ bgp['local_as'] }}
+      - address-family ipv6 unicast
+  when:
+    - bgp is defined
+    - bgp.redist is defined
+    - bgp.redist.ospfv3 is defined
+  tags:
+  - bgp
+  - bgp_v6
+
+- name: Configure BGP - iBGP v4 Default Originate
+  ios_config:
+    lines:
+      - neighbor {{ item.peer }} default-originate
+    parents:
+      - router bgp {{ bgp['local_as'] }}
+      - address-family ipv4 unicast
+  when: 
+    - bgp is defined
+    - bgp.neighbors is defined
+    - bgp.neighbors.ipv4 is defined
+    - item.ibgp is defined
+    - item.default_originate is defined
+  loop: "{{ bgp.neighbors.ipv4 }}"
+  tags:
+  - bgp
+  - bgp_v4
