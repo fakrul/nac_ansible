@@ -7,7 +7,7 @@
 
   vars:
     ntp_servers:
-      - ntp server 216.239.35.0
+      - ntp server 220.158.215.20
       - ntp server 216.239.35.4
 
   tasks:
