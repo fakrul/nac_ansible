@@ -1,11 +1,11 @@
 ---
 # tasks file for roles/routing
 #
-- name: Include OSPF routing
+- name: include ospf routing
   include: ospf.yml
 
-- name: Include OSPFv3 routing
+- name: include ospfv3 routing
   include: ospfv3.yml
 
-- name: Include BGP routing
+- name: include bgp routing
   include: bgp.yml

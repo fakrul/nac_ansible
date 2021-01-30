@@ -1,10 +1,10 @@
 ---
 ## tasks file for interfaces
-- name: Configure sub-interfaces first
+- name: configure sub-interfaces first
   ios_config:
     src: subints.j2
 
-- name: Configure interfaces - Status and Descriptions
+- name: configure interfaces - status and descriptions
   ios_interfaces:
     config:
       - name: "{{ item.ios_if }}"
@@ -12,7 +12,7 @@
         enabled: "{{ item.enabled }}"
   loop: "{{ interfaces }}"
 
-- name: Configure interfaces - L3 IPv4
+- name: configure interfaces - l3 ipv4
   ios_l3_interfaces:
     config:
       - name: "{{ item.ios_if }}"
@@ -21,7 +21,7 @@
   when: item.ipv4 is defined
   loop: "{{ interfaces }}"
 
-- name: Configure interfaces - L3 IPv6
+- name: configure interfaces - l3 ipv6
   ios_l3_interfaces:
     config:
       - name: "{{ item.ios_if }}"
