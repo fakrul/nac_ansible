@@ -1,7 +1,6 @@
 ---
 # tasks file for ntp
 #
-tasks:
 - name: get the current ntp server configs
   ios_command:
     commands:

@@ -1,7 +1,6 @@
 ---
 # tasks file for snmp
 #
-tasks:
 - name: get the current snmp-server config
   ios_command:
     commands:
