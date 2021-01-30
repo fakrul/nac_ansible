@@ -10,6 +10,6 @@ snmp:
   ipv4: 100.100.250.10
 
 snmp_server:
-    - snmp-server community network_as_code RO SNMP-RO
+    - snmp-server community network_as_code ro 99
     - snmp-server trap-source Loopback0
     - snmp-server contact fakrul@alam.rocks
