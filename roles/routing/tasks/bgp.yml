@@ -97,7 +97,7 @@
         - afi: ipv4
           redistribute:
             - protocol: ospf
-              id: 1
+              id: 100
   when: 
     - bgp is defined
     - bgp.redist is defined
@@ -114,7 +114,7 @@
         - afi: ipv6
           redistribute:
             - protocol: ospf
-              id: 1
+              id: 100
   when: 
     - bgp is defined
     - bgp.redist is defined
@@ -126,7 +126,7 @@
 - name: Configure BGP - Redistribute OSPFv3 and include connected networks
   ios_config:
     lines:
-      - redistribute ospf 1 include-connected
+      - redistribute ospf 100 include-connected
     parents:
       - router bgp {{ bgp['local_as'] }}
       - address-family ipv6 unicast

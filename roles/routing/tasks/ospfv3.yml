@@ -16,12 +16,12 @@
   ios_config:
     lines: 
       - "router-id {{ router_id }}"
-    parents: router ospfv3 1
+    parents: router ospfv3 100
 
 - name: OSPFv3 Interfaces
   ios_config:
     lines:
-      - ipv6 ospf 1 area {{ item.ospfv3.area }}
+      - ipv6 ospf 100 area {{ item.ospfv3.area }}
     parents: interface {{ item.ios_if }}
   when: item.ospfv3 is defined
   loop: "{{ interfaces }}"
@@ -30,7 +30,7 @@
   ios_config:
     lines:
       - passive-interface {{ item.ios_if }}
-    parents: router ospfv3 1
+    parents: router ospfv3 100
   when: 
     - item.ospfv3 is defined
     - item.ospfv3.passive is defined
@@ -40,4 +40,4 @@
   ios_config:
     lines:
       - "no address-family ipv4 unicast"
-    parents: router ospfv3 1
+    parents: router ospfv3 100

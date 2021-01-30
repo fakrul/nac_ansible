@@ -10,12 +10,12 @@
   ios_config:
     lines: 
       - "router-id {{ router_id }}"
-    parents: router ospf 1
+    parents: router ospf 100
 
 - name: OSPF Interfaces
   ios_config:
     lines:
-      - ip ospf 1 area {{ item.ospf.area }}
+      - ip ospf 100 area {{ item.ospf.area }}
     parents: interface {{ item.ios_if }}
   when: item.ospf is defined
   loop: "{{ interfaces }}"
@@ -24,7 +24,7 @@
   ios_config:
     lines:
       - passive-interface {{ item.ios_if }}
-    parents: router ospf 1
+    parents: router ospf 100
   when: 
     - item.ospf is defined
     - item.ospf.passive is defined
