@@ -596,3 +596,204 @@ The offending line appears to be:
 2021-01-30 14:32:48,235 p=17251 u=linux n=ansible | aggr01                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-01-30 14:32:48,235 p=17251 u=linux n=ansible | core01                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-01-30 14:32:48,329 p=17271 u=linux n=ansible | shutdown complete
+2021-01-30 14:49:34,190 p=17533 u=linux n=ansible | ERROR! included task files must contain a list of tasks
+
+The error appears to be in '/home/linux/nac_ansible/roles/common/tasks/ntp.yml': line 4, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#
+tasks:
+^ here
+
+2021-01-30 14:50:54,597 p=17601 u=linux n=ansible | ERROR! included task files must contain a list of tasks
+
+The error appears to be in '/home/linux/nac_ansible/roles/common/tasks/snmp.yml': line 4, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#
+tasks:
+^ here
+
+2021-01-30 14:51:07,206 p=17608 u=linux n=ansible | PLAY [routers] **************************************************************************************************************************************
+2021-01-30 14:51:07,217 p=17608 u=linux n=ansible | TASK [common : get the current name-server configs] *************************************************************************************************
+2021-01-30 14:51:07,953 p=17615 u=linux n=ansible | network_os is set to ios
+2021-01-30 14:51:07,965 p=17616 u=linux n=ansible | network_os is set to ios
+2021-01-30 14:51:08,490 p=17628 u=linux n=p=17628 u=linux | paramiko [100.100.100.2] | Connected (version 1.99, client Cisco-1.25)
+2021-01-30 14:51:08,493 p=17625 u=linux n=p=17625 u=linux | paramiko [100.100.100.1] | Connected (version 2.0, client Cisco-1.25)
+2021-01-30 14:51:08,755 p=17625 u=linux n=p=17625 u=linux | paramiko [100.100.100.1] | Authentication (password) successful!
+2021-01-30 14:51:08,950 p=17628 u=linux n=p=17628 u=linux | paramiko [100.100.100.2] | Authentication (password) successful!
+2021-01-30 14:51:09,640 p=17608 u=linux n=ansible | ok: [core01]
+2021-01-30 14:51:09,841 p=17608 u=linux n=ansible | ok: [aggr01]
+2021-01-30 14:51:09,845 p=17608 u=linux n=ansible | TASK [common : debug] *******************************************************************************************************************************
+2021-01-30 14:51:10,543 p=17608 u=linux n=ansible | ok: [aggr01] => 
+  get_config.stdout_lines:
+  - - ip name-server 8.8.8.8
+    - ip name-server 9.9.9.9
+2021-01-30 14:51:10,547 p=17608 u=linux n=ansible | ok: [core01] => 
+  get_config.stdout_lines:
+  - - ip name-server 8.8.8.8
+    - ip name-server 9.9.9.9
+2021-01-30 14:51:10,551 p=17608 u=linux n=ansible | TASK [common : set name-server commands] ************************************************************************************************************
+2021-01-30 14:51:12,202 p=17608 u=linux n=ansible | ok: [aggr01] => (item=ip name-server 8.8.8.8)
+2021-01-30 14:51:12,207 p=17608 u=linux n=ansible | ok: [core01] => (item=ip name-server 8.8.8.8)
+2021-01-30 14:51:13,093 p=17608 u=linux n=ansible | ok: [aggr01] => (item=ip name-server 9.9.9.9)
+2021-01-30 14:51:13,100 p=17608 u=linux n=ansible | ok: [core01] => (item=ip name-server 9.9.9.9)
+2021-01-30 14:51:13,106 p=17608 u=linux n=ansible | TASK [common : remove name-server commands] *********************************************************************************************************
+2021-01-30 14:51:13,199 p=17608 u=linux n=ansible | skipping: [core01] => (item=ip name-server 8.8.8.8) 
+2021-01-30 14:51:13,209 p=17608 u=linux n=ansible | skipping: [aggr01] => (item=ip name-server 8.8.8.8) 
+2021-01-30 14:51:13,240 p=17608 u=linux n=ansible | skipping: [core01] => (item=ip name-server 9.9.9.9) 
+2021-01-30 14:51:13,247 p=17608 u=linux n=ansible | skipping: [aggr01] => (item=ip name-server 9.9.9.9) 
+2021-01-30 14:51:13,414 p=17625 u=linux n=ansible | shutdown complete
+2021-01-30 14:51:13,431 p=17608 u=linux n=ansible | PLAY RECAP ******************************************************************************************************************************************
+2021-01-30 14:51:13,431 p=17608 u=linux n=ansible | aggr01                     : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2021-01-30 14:51:13,431 p=17608 u=linux n=ansible | core01                     : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2021-01-30 14:51:13,561 p=17628 u=linux n=ansible | shutdown complete
+2021-01-30 14:54:45,432 p=17840 u=linux n=ansible | PLAY [routers] **************************************************************************************************************************************
+2021-01-30 14:54:45,443 p=17840 u=linux n=ansible | TASK [common : get the current name-server configs] *************************************************************************************************
+2021-01-30 14:54:46,180 p=17847 u=linux n=ansible | network_os is set to ios
+2021-01-30 14:54:46,186 p=17848 u=linux n=ansible | network_os is set to ios
+2021-01-30 14:54:46,711 p=17860 u=linux n=p=17860 u=linux | paramiko [100.100.100.2] | Connected (version 1.99, client Cisco-1.25)
+2021-01-30 14:54:46,713 p=17859 u=linux n=p=17859 u=linux | paramiko [100.100.100.1] | Connected (version 2.0, client Cisco-1.25)
+2021-01-30 14:54:47,217 p=17860 u=linux n=p=17860 u=linux | paramiko [100.100.100.2] | Authentication (password) successful!
+2021-01-30 14:54:47,219 p=17859 u=linux n=p=17859 u=linux | paramiko [100.100.100.1] | Authentication (password) successful!
+2021-01-30 14:54:48,095 p=17840 u=linux n=ansible | ok: [core01]
+2021-01-30 14:54:48,100 p=17840 u=linux n=ansible | ok: [aggr01]
+2021-01-30 14:54:48,105 p=17840 u=linux n=ansible | TASK [common : debug] *******************************************************************************************************************************
+2021-01-30 14:54:48,799 p=17840 u=linux n=ansible | ok: [core01] => 
+  get_config.stdout_lines:
+  - - ip name-server 8.8.8.8
+    - ip name-server 9.9.9.9
+2021-01-30 14:54:48,805 p=17840 u=linux n=ansible | ok: [aggr01] => 
+  get_config.stdout_lines:
+  - - ip name-server 8.8.8.8
+    - ip name-server 9.9.9.9
+2021-01-30 14:54:48,809 p=17840 u=linux n=ansible | TASK [common : set name-server commands] ************************************************************************************************************
+2021-01-30 14:54:50,447 p=17840 u=linux n=ansible | ok: [core01] => (item=ip name-server 8.8.8.8)
+2021-01-30 14:54:50,451 p=17840 u=linux n=ansible | ok: [aggr01] => (item=ip name-server 8.8.8.8)
+2021-01-30 14:54:51,336 p=17840 u=linux n=ansible | ok: [core01] => (item=ip name-server 9.9.9.9)
+2021-01-30 14:54:51,342 p=17840 u=linux n=ansible | ok: [aggr01] => (item=ip name-server 9.9.9.9)
+2021-01-30 14:54:51,348 p=17840 u=linux n=ansible | TASK [common : remove name-server commands] *********************************************************************************************************
+2021-01-30 14:54:51,365 p=17840 u=linux n=ansible |  [ERROR]: User interrupted execution
+
+2021-01-30 14:55:21,292 p=17859 u=linux n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2021-01-30 14:55:21,298 p=17860 u=linux n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2021-01-30 14:55:21,408 p=17859 u=linux n=ansible | shutdown complete
+2021-01-30 14:55:21,414 p=17860 u=linux n=ansible | shutdown complete
+2021-01-30 15:01:58,599 p=18044 u=linux n=ansible | PLAY [routers] **************************************************************************************************************************************
+2021-01-30 15:01:58,611 p=18044 u=linux n=ansible | TASK [Configure sub-interfaces first] ***************************************************************************************************************
+2021-01-30 15:01:59,354 p=18052 u=linux n=ansible | network_os is set to ios
+2021-01-30 15:01:59,358 p=18051 u=linux n=ansible | network_os is set to ios
+2021-01-30 15:01:59,900 p=18064 u=linux n=p=18064 u=linux | paramiko [100.100.100.1] | Connected (version 2.0, client Cisco-1.25)
+2021-01-30 15:01:59,906 p=18063 u=linux n=p=18063 u=linux | paramiko [100.100.100.2] | Connected (version 1.99, client Cisco-1.25)
+2021-01-30 15:02:00,166 p=18063 u=linux n=p=18063 u=linux | paramiko [100.100.100.2] | Authentication (password) successful!
+2021-01-30 15:02:00,365 p=18064 u=linux n=p=18064 u=linux | paramiko [100.100.100.1] | Authentication (password) successful!
+2021-01-30 15:02:01,027 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:01,238 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:01,241 p=18044 u=linux n=ansible | TASK [Configure interfaces - Status and Descriptions] ***********************************************************************************************
+2021-01-30 15:02:03,277 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:03,284 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:04,511 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:04,566 p=18044 u=linux n=ansible | ok: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'})
+2021-01-30 15:02:05,741 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:05,771 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:05,776 p=18044 u=linux n=ansible | TASK [Configure interfaces - L3 IPv4] ***************************************************************************************************************
+2021-01-30 15:02:07,817 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:07,831 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:09,071 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:09,077 p=18044 u=linux n=ansible | ok: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'})
+2021-01-30 15:02:10,340 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:10,349 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:10,356 p=18044 u=linux n=ansible | TASK [Configure interfaces - L3 IPv6] ***************************************************************************************************************
+2021-01-30 15:02:12,219 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:12,234 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:12,268 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'}) 
+2021-01-30 15:02:13,490 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:13,503 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:14,468 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:14,475 p=18044 u=linux n=ansible | TASK [routing : OSPF Process] ***********************************************************************************************************************
+2021-01-30 15:02:15,979 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:15,982 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:15,986 p=18044 u=linux n=ansible | TASK [routing : OSPF Process - Router ID] ***********************************************************************************************************
+2021-01-30 15:02:17,491 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:17,494 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:17,498 p=18044 u=linux n=ansible | TASK [routing : OSPF Interfaces] ********************************************************************************************************************
+2021-01-30 15:02:19,020 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:19,026 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:19,069 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'}) 
+2021-01-30 15:02:19,895 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:20,400 p=18044 u=linux n=ansible | changed: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:20,988 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:20,996 p=18044 u=linux n=ansible | TASK [routing : OSPF Interfaces - Passive] **********************************************************************************************************
+2021-01-30 15:02:21,090 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}}) 
+2021-01-30 15:02:21,102 p=18044 u=linux n=ansible | skipping: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}}) 
+2021-01-30 15:02:21,132 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'}) 
+2021-01-30 15:02:22,549 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:23,005 p=18044 u=linux n=ansible | changed: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:23,639 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:23,646 p=18044 u=linux n=ansible | TASK [Enable IPv6 routing] **************************************************************************************************************************
+2021-01-30 15:02:25,160 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:25,163 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:25,167 p=18044 u=linux n=ansible | TASK [routing : OSPFv3 Process] *********************************************************************************************************************
+2021-01-30 15:02:26,665 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:26,668 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:26,671 p=18044 u=linux n=ansible | TASK [routing : OSPFv3 Process - Router ID] *********************************************************************************************************
+2021-01-30 15:02:28,166 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:28,169 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:28,173 p=18044 u=linux n=ansible | TASK [routing : OSPFv3 Interfaces] ******************************************************************************************************************
+2021-01-30 15:02:29,692 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:29,698 p=18044 u=linux n=ansible | ok: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}})
+2021-01-30 15:02:29,741 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'}) 
+2021-01-30 15:02:30,563 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:31,035 p=18044 u=linux n=ansible | changed: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:31,669 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:31,676 p=18044 u=linux n=ansible | TASK [routing : OSPFv3 Interfaces - Passive] ********************************************************************************************************
+2021-01-30 15:02:31,771 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'ipv4': u'100.100.10.1/30', u'ipv6': u'2001:db8:201::a/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'core01-aggr01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}}) 
+2021-01-30 15:02:31,783 p=18044 u=linux n=ansible | skipping: [aggr01] => (item={u'ipv4': u'100.100.10.2/30', u'ipv6': u'2001:db8:201::f/64', u'ospf': {u'area': u'0.0.0.0'}, u'desc': u'aggr01-core01', u'enabled': True, u'ios_if': u'GigabitEthernet0/0', u'ospfv3': {u'area': u'0.0.0.0'}}) 
+2021-01-30 15:02:31,815 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'desc': u'core01-internet', u'enabled': True, u'ipv4': u'dhcp', u'ios_if': u'GigabitEthernet0/1'}) 
+2021-01-30 15:02:33,683 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'ipv4': u'100.100.250.1/24', u'ipv6': u'2001:db8:abcd::f/64', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'server_block', u'enabled': True, u'ios_if': u'GigabitEthernet0/1', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:33,703 p=18044 u=linux n=ansible | changed: [core01] => (item={u'ipv4': u'100.100.100.1/32', u'ipv6': u'2001:db8:901:beef::1/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:34,772 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'ipv4': u'100.100.100.2/32', u'ipv6': u'2001:db8:901:beef::2/128', u'ospf': {u'passive': True, u'area': u'0.0.0.0'}, u'desc': u'Loopback', u'enabled': True, u'ios_if': u'loopback0', u'ospfv3': {u'passive': True, u'area': u'0.0.0.0'}})
+2021-01-30 15:02:34,779 p=18044 u=linux n=ansible | TASK [routing : Removed IPv4 address family] ********************************************************************************************************
+2021-01-30 15:02:36,707 p=18044 u=linux n=ansible | changed: [core01]
+2021-01-30 15:02:36,710 p=18044 u=linux n=ansible | changed: [aggr01]
+2021-01-30 15:02:36,714 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - eBGP v4 peers] ******************************************************************************************************
+2021-01-30 15:02:36,812 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'peer': u'100.100.100.2', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0', u'default_originate': True}) 
+2021-01-30 15:02:36,818 p=18044 u=linux n=ansible | skipping: [aggr01] => (item={u'peer': u'100.100.100.1', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0', u'default_originate': True}) 
+2021-01-30 15:02:36,823 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - eBGP v6 peers] ******************************************************************************************************
+2021-01-30 15:02:36,922 p=18044 u=linux n=ansible | skipping: [core01] => (item={u'peer': u'2001:db8:901:beef::2', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0'}) 
+2021-01-30 15:02:36,928 p=18044 u=linux n=ansible | skipping: [aggr01] => (item={u'peer': u'2001:db8:901:beef::1', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0'}) 
+2021-01-30 15:02:36,932 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - iBGP v4 peers] ******************************************************************************************************
+2021-01-30 15:02:38,635 p=18044 u=linux n=ansible | ok: [core01] => (item={u'peer': u'100.100.100.2', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0', u'default_originate': True})
+2021-01-30 15:02:38,639 p=18044 u=linux n=ansible | ok: [aggr01] => (item={u'peer': u'100.100.100.1', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0', u'default_originate': True})
+2021-01-30 15:02:38,645 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - iBGP v6 peers] ******************************************************************************************************
+2021-01-30 15:02:41,192 p=18044 u=linux n=ansible | changed: [core01] => (item={u'peer': u'2001:db8:901:beef::2', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0'})
+2021-01-30 15:02:41,213 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'peer': u'2001:db8:901:beef::1', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0'})
+2021-01-30 15:02:41,219 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - Redistribute OSPF] **************************************************************************************************
+2021-01-30 15:02:42,730 p=18044 u=linux n=ansible | [WARNING]: The value 100 (type int) in a string field was converted to '100' (type string). If this does not look like what you expect, quote the
+entire value to ensure it does not change.
+
+2021-01-30 15:02:42,730 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:42,733 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:42,738 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - Redistribute OSPFv3] ************************************************************************************************
+2021-01-30 15:02:44,250 p=18044 u=linux n=ansible | ok: [aggr01]
+2021-01-30 15:02:44,253 p=18044 u=linux n=ansible | ok: [core01]
+2021-01-30 15:02:44,258 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - Redistribute OSPFv3 and include connected networks] *****************************************************************
+2021-01-30 15:02:46,335 p=18044 u=linux n=ansible | changed: [core01]
+2021-01-30 15:02:46,339 p=18044 u=linux n=ansible | changed: [aggr01]
+2021-01-30 15:02:46,344 p=18044 u=linux n=ansible | TASK [routing : Configure BGP - iBGP v4 Default Originate] ******************************************************************************************
+2021-01-30 15:02:48,428 p=18044 u=linux n=ansible | changed: [aggr01] => (item={u'peer': u'100.100.100.1', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0', u'default_originate': True})
+2021-01-30 15:02:48,433 p=18044 u=linux n=ansible | changed: [core01] => (item={u'peer': u'100.100.100.2', u'ibgp': True, u'remote_as': 65534, u'update_source': u'Loopback0', u'default_originate': True})
+2021-01-30 15:02:48,438 p=18044 u=linux n=ansible | TASK [save running to startup when modified] ********************************************************************************************************
+2021-01-30 15:02:51,232 p=18044 u=linux n=ansible | changed: [core01]
+2021-01-30 15:02:51,236 p=18044 u=linux n=ansible | changed: [aggr01]
+2021-01-30 15:02:51,402 p=18064 u=linux n=ansible | shutdown complete
+2021-01-30 15:02:51,419 p=18044 u=linux n=ansible | PLAY RECAP ******************************************************************************************************************************************
+2021-01-30 15:02:51,419 p=18044 u=linux n=ansible | aggr01                     : ok=21   changed=9    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2021-01-30 15:02:51,419 p=18044 u=linux n=ansible | core01                     : ok=21   changed=9    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2021-01-30 15:02:51,516 p=18063 u=linux n=ansible | shutdown complete
