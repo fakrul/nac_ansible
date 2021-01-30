@@ -1,0 +1,10 @@
+- name: snmp acl list
+  ios_config:
+    lines:
+      - 10 permit udp host {{ snmp['ipv4'] }} eq snmp any
+      - 1000 deny ip any any log
+    parents:
+      - ip access-list extended SNMP-RO
+  tags:
+    - acl
+    - acl_ipv4

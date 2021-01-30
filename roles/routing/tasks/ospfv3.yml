@@ -2,23 +2,23 @@
 # tasks file for routing
 #
 
-- name: Enable IPv6 routing
+- name: enable ipv6 routing
   ios_config:
     lines:
       - "ipv6 unicast-routing"
 
-- name: OSPFv3 Process
+- name: ospfv3 process
   ios_config:
     lines:
       - "router ospfv3 100"
 
-- name: OSPFv3 Process - Router ID
+- name: ospfv3 process - router id
   ios_config:
     lines: 
       - "router-id {{ router_id }}"
     parents: router ospfv3 100
 
-- name: OSPFv3 Interfaces
+- name: ospfv3 interfaces
   ios_config:
     lines:
       - ipv6 ospf 100 area {{ item.ospfv3.area }}
@@ -26,7 +26,7 @@
   when: item.ospfv3 is defined
   loop: "{{ interfaces }}"
 
-- name: OSPFv3 Interfaces - Passive
+- name: ospfv3 interfaces - passive
   ios_config:
     lines:
       - passive-interface {{ item.ios_if }}
@@ -36,7 +36,7 @@
     - item.ospfv3.passive is defined
   loop: "{{ interfaces }}"
 
-- name: Removed IPv4 address family
+- name: removed ipv4 address family
   ios_config:
     lines:
       - "no address-family ipv4 unicast"

@@ -6,9 +6,10 @@ ntp_servers:
     - ntp server 220.158.215.20
     - ntp server 216.239.35.4
 
+snmp:
+  ipv4: 100.100.250.10
+
 snmp_server:
-    - snmp-server community network_as_code RO 99
+    - snmp-server community network_as_code RO SNMP-RO
     - snmp-server trap-source Loopback0
     - snmp-server contact fakrul@alam.rocks
-    - snmp-server host 100.100.250.10 version 2c public udp-port 161
-    - snmp-server host 100.100.250.15 version 2c public udp-port 161

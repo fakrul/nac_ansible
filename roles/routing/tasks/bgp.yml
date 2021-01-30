@@ -1,7 +1,7 @@
 ---
 # tasks file for routing
 #
-- name: Configure BGP - eBGP v4 peers
+- name: configure bgp - ebgp v4 peers
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
@@ -20,7 +20,7 @@
   - bgp
   - bgp_v4
 
-- name: Configure BGP - eBGP v6 peers
+- name: configure bgp - ebgp v6 peers
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
@@ -44,7 +44,7 @@
   - bgp
   - bgp_v6
 
-- name: Configure BGP - iBGP v4 peers
+- name: configure bgp - ibgp v4 peers
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
@@ -64,7 +64,7 @@
   - bgp
   - bgp_v4
 
-- name: Configure BGP - iBGP v6 peers
+- name: configure bgp - ibgp v6 peers
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
@@ -89,7 +89,7 @@
   - bgp
   - bgp_v6
 
-- name: Configure BGP - Redistribute OSPF
+- name: configure bgp - redistribute ospf
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
@@ -106,7 +106,7 @@
   - bgp
   - bgp_v4
 
-- name: Configure BGP - Redistribute OSPFv3
+- name: configure bgp - redistribute ospfv3
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
@@ -123,7 +123,7 @@
   - bgp
   - bgp_v6
 
-- name: Configure BGP - Redistribute OSPFv3 and include connected networks
+- name: configure bgp - redistribute ospfv3 and include connected networks
   ios_config:
     lines:
       - redistribute ospf 100 include-connected
@@ -138,7 +138,7 @@
   - bgp
   - bgp_v6
 
-- name: Configure BGP - iBGP v4 Default Originate
+- name: configure bgp - ibgp v4 default originate
   ios_config:
     lines:
       - neighbor {{ item.peer }} default-originate
