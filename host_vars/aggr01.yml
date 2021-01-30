@@ -37,6 +37,13 @@ interfaces:
     desc: "server_block"
     enabled: true
     ipv4: "100.100.250.1/24"
+    ipv6: "2001:db8:abcd::f/64"
+    ospf:
+      area: "0.0.0.0"
+      passive: true
+    ospfv3:
+      area: "0.0.0.0"
+      passive: true
 
   - ios_if: "loopback0"
     desc: "Loopback"
