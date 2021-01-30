@@ -1,0 +1,22 @@
+---
+hostname: core01
+domain_name: alam.rocks
+router_id: 100.100.100.1
+rtr_role: core
+
+interfaces:
+  - ios_if: "GigabitEthernet0/0"
+    desc: "core01-aggr01"
+    enabled: true
+    ipv4: "100.100.10.1/30"
+
+  - ios_if: "GigabitEthernet0/1"
+    desc: "core01-internet"
+    enabled: true
+    ipv4: "dhcp"
+
+  - ios_if: "loopback0"
+    desc: "Loopback"
+    enabled: true
+    ipv4: "100.100.100.1/32"
+    ipv6: "2001:db8:901:beef::1/128"
