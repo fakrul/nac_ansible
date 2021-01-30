@@ -30,10 +30,8 @@ interfaces:
     ipv6: "2001:db8:201::a/64"
     ospf:
       area: "0.0.0.0"
-      passive: true
     ospfv3:
       area: "0.0.0.0"
-      passive: true
 
   - ios_if: "GigabitEthernet0/1"
     desc: "core01-internet"
