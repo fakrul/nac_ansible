@@ -4257,3 +4257,1166 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2021-02-02 05:06:52,668 p=5061 u=linux n=ansible | aggr01                     : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-02-02 05:06:52,668 p=5061 u=linux n=ansible | core01                     : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-02-02 05:06:52,763 p=5081 u=linux n=ansible | shutdown complete
+2021-02-02 07:25:42,013 p=6117 u=linux n=ansible | ansible-playbook 2.9.17
+  config file = /home/linux/nac_ansible/ansible.cfg
+  configured module search path = [u'/home/linux/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.17 (default, Sep 30 2020, 13:38:04) [GCC 7.5.0]
+2021-02-02 07:25:42,013 p=6117 u=linux n=ansible | Using /home/linux/nac_ansible/ansible.cfg as config file
+2021-02-02 07:25:42,020 p=6117 u=linux n=ansible | host_list declined parsing /home/linux/nac_ansible/hosts as it did not pass its verify_file() method
+2021-02-02 07:25:42,020 p=6117 u=linux n=ansible | script declined parsing /home/linux/nac_ansible/hosts as it did not pass its verify_file() method
+2021-02-02 07:25:42,020 p=6117 u=linux n=ansible | auto declined parsing /home/linux/nac_ansible/hosts as it did not pass its verify_file() method
+2021-02-02 07:25:42,023 p=6117 u=linux n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-02-02 07:25:42,024 p=6117 u=linux n=ansible | Parsed /home/linux/nac_ansible/hosts inventory source with ini plugin
+2021-02-02 07:25:42,114 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,114 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,117 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,120 p=6117 u=linux n=ansible | statically imported: /home/linux/nac_ansible/roles/common/tasks/nameserver.yml
+2021-02-02 07:25:42,214 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,215 p=6117 u=linux n=ansible | statically imported: /home/linux/nac_ansible/roles/common/tasks/ntp.yml
+2021-02-02 07:25:42,217 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,218 p=6117 u=linux n=ansible | statically imported: /home/linux/nac_ansible/roles/common/tasks/acl.yml
+2021-02-02 07:25:42,219 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,221 p=6117 u=linux n=ansible | statically imported: /home/linux/nac_ansible/roles/common/tasks/snmp.yml
+2021-02-02 07:25:42,260 p=6117 u=linux n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2021-02-02 07:25:42,260 p=6117 u=linux n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2021-02-02 07:25:42,260 p=6117 u=linux n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2021-02-02 07:25:42,260 p=6117 u=linux n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2021-02-02 07:25:42,261 p=6117 u=linux n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2021-02-02 07:25:42,262 p=6117 u=linux n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2021-02-02 07:25:42,262 p=6117 u=linux n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2021-02-02 07:25:42,262 p=6117 u=linux n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2021-02-02 07:25:42,262 p=6117 u=linux n=ansible | PLAYBOOK: main-commonconfig.yml ***************************************************************************************************************
+2021-02-02 07:25:42,262 p=6117 u=linux n=ansible | 1 plays in main-commonconfig.yml
+2021-02-02 07:25:42,263 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,263 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,264 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,264 p=6117 u=linux n=ansible | PLAY [routers] ********************************************************************************************************************************
+2021-02-02 07:25:42,271 p=6117 u=linux n=ansible | META: ran handlers
+2021-02-02 07:25:42,277 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:42,277 p=6117 u=linux n=ansible | TASK [common : get the current name-server configs] *******************************************************************************************
+2021-02-02 07:25:42,289 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:43,019 p=6124 u=linux n=ansible | network_os is set to ios
+2021-02-02 07:25:43,023 p=6124 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:43,024 p=6124 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916 `" && echo ansible-tmp-1612250743.02-6124-183941689483916="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916 `" ) && sleep 0'
+2021-02-02 07:25:43,033 p=6125 u=linux n=ansible | network_os is set to ios
+2021-02-02 07:25:43,036 p=6125 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:43,037 p=6125 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404 `" && echo ansible-tmp-1612250743.04-6125-124607017676404="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404 `" ) && sleep 0'
+2021-02-02 07:25:43,202 p=6125 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_command.py
+2021-02-02 07:25:43,204 p=6125 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpIlQqV2 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404/AnsiballZ_ios_command.py
+2021-02-02 07:25:43,206 p=6125 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:43,207 p=6124 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_command.py
+2021-02-02 07:25:43,208 p=6124 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmp3D9py7 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916/AnsiballZ_ios_command.py
+2021-02-02 07:25:43,209 p=6124 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:43,216 p=6125 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:43,218 p=6124 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:43,583 p=6135 u=linux n=ansible | <192.168.199.1> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: cisco on PORT 22 TO 192.168.199.1
+2021-02-02 07:25:43,584 p=6137 u=linux n=ansible | <192.168.199.2> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: cisco on PORT 22 TO 192.168.199.2
+2021-02-02 07:25:43,609 p=6137 u=linux n=p=6137 u=linux | paramiko [192.168.199.2] | Connected (version 2.0, client Cisco-1.25)
+2021-02-02 07:25:43,617 p=6135 u=linux n=p=6135 u=linux | paramiko [192.168.199.1] | Connected (version 2.0, client Cisco-1.25)
+2021-02-02 07:25:44,180 p=6137 u=linux n=p=6137 u=linux | paramiko [192.168.199.2] | Auth banner: 
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+2021-02-02 07:25:44,191 p=6137 u=linux n=p=6137 u=linux | paramiko [192.168.199.2] | Authentication (password) successful!
+2021-02-02 07:25:44,208 p=6135 u=linux n=p=6135 u=linux | paramiko [192.168.199.1] | Auth banner: 
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+2021-02-02 07:25:44,220 p=6135 u=linux n=p=6135 u=linux | paramiko [192.168.199.1] | Authentication (password) successful!
+2021-02-02 07:25:45,719 p=6125 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.04-6125-124607017676404/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:45,729 p=6117 u=linux n=ansible | ok: [aggr01] => changed=false 
+  invocation:
+    module_args:
+      auth_pass: null
+      authorize: null
+      commands:
+      - show running-config full | include ip name-server
+      host: null
+      interval: 1
+      match: all
+      password: null
+      port: null
+      provider: null
+      retries: 10
+      ssh_keyfile: null
+      timeout: null
+      username: null
+      wait_for: null
+  stdout:
+  - |-
+    ip name-server 8.8.8.8
+    ip name-server 9.9.9.9
+  stdout_lines: <omitted>
+2021-02-02 07:25:45,932 p=6124 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250743.02-6124-183941689483916/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:45,941 p=6117 u=linux n=ansible | ok: [core01] => changed=false 
+  invocation:
+    module_args:
+      auth_pass: null
+      authorize: null
+      commands:
+      - show running-config full | include ip name-server
+      host: null
+      interval: 1
+      match: all
+      password: null
+      port: null
+      provider: null
+      retries: 10
+      ssh_keyfile: null
+      timeout: null
+      username: null
+      wait_for: null
+  stdout:
+  - |-
+    ip name-server 8.8.8.8
+    ip name-server 9.9.9.9
+  stdout_lines: <omitted>
+2021-02-02 07:25:45,945 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:45,945 p=6117 u=linux n=ansible | TASK [common : debug] *************************************************************************************************************************
+2021-02-02 07:25:45,951 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:46,634 p=6117 u=linux n=ansible | ok: [core01] => 
+  get_config.stdout_lines:
+  - - ip name-server 8.8.8.8
+    - ip name-server 9.9.9.9
+2021-02-02 07:25:46,648 p=6117 u=linux n=ansible | ok: [aggr01] => 
+  get_config.stdout_lines:
+  - - ip name-server 8.8.8.8
+    - ip name-server 9.9.9.9
+2021-02-02 07:25:46,651 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:46,652 p=6117 u=linux n=ansible | TASK [common : set name-server commands] ******************************************************************************************************
+2021-02-02 07:25:46,660 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:47,320 p=6198 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:47,323 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469 `" && echo ansible-tmp-1612250747.32-6198-160226518846469="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469 `" ) && sleep 0'
+2021-02-02 07:25:47,325 p=6199 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:47,325 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001 `" && echo ansible-tmp-1612250747.32-6199-155054535567001="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001 `" ) && sleep 0'
+2021-02-02 07:25:47,494 p=6199 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:47,495 p=6199 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpkiavUQ TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001/AnsiballZ_ios_config.py
+2021-02-02 07:25:47,496 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:47,498 p=6198 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:47,499 p=6198 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpmXZIiM TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469/AnsiballZ_ios_config.py
+2021-02-02 07:25:47,500 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:47,507 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:47,510 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:48,529 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6199-155054535567001/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:48,544 p=6117 u=linux n=ansible | ok: [aggr01] => (item=ip name-server 8.8.8.8) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ip name-server 8.8.8.8
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ip name-server 8.8.8.8
+2021-02-02 07:25:48,586 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218 `" && echo ansible-tmp-1612250748.59-6199-111533346875218="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218 `" ) && sleep 0'
+2021-02-02 07:25:48,608 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250747.32-6198-160226518846469/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:48,622 p=6199 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:48,623 p=6199 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpbNND3S TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218/AnsiballZ_ios_config.py
+2021-02-02 07:25:48,624 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:48,628 p=6117 u=linux n=ansible | ok: [core01] => (item=ip name-server 8.8.8.8) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ip name-server 8.8.8.8
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ip name-server 8.8.8.8
+2021-02-02 07:25:48,645 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:48,698 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359 `" && echo ansible-tmp-1612250748.7-6198-137666176292359="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359 `" ) && sleep 0'
+2021-02-02 07:25:48,734 p=6198 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:48,735 p=6198 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpVGNscP TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359/AnsiballZ_ios_config.py
+2021-02-02 07:25:48,736 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:48,753 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:49,663 p=6199 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.59-6199-111533346875218/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:49,674 p=6117 u=linux n=ansible | ok: [aggr01] => (item=ip name-server 9.9.9.9) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ip name-server 9.9.9.9
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ip name-server 9.9.9.9
+2021-02-02 07:25:49,733 p=6198 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250748.7-6198-137666176292359/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:49,744 p=6117 u=linux n=ansible | ok: [core01] => (item=ip name-server 9.9.9.9) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ip name-server 9.9.9.9
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ip name-server 9.9.9.9
+2021-02-02 07:25:49,750 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:49,750 p=6117 u=linux n=ansible | TASK [common : remove name-server commands] ***************************************************************************************************
+2021-02-02 07:25:49,760 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:49,845 p=6117 u=linux n=ansible | skipping: [core01] => (item=ip name-server 8.8.8.8)  => changed=false 
+  ansible_loop_var: item
+  item: ip name-server 8.8.8.8
+  skip_reason: Conditional result was False
+2021-02-02 07:25:49,856 p=6117 u=linux n=ansible | skipping: [aggr01] => (item=ip name-server 8.8.8.8)  => changed=false 
+  ansible_loop_var: item
+  item: ip name-server 8.8.8.8
+  skip_reason: Conditional result was False
+2021-02-02 07:25:49,891 p=6117 u=linux n=ansible | skipping: [core01] => (item=ip name-server 9.9.9.9)  => changed=false 
+  ansible_loop_var: item
+  item: ip name-server 9.9.9.9
+  skip_reason: Conditional result was False
+2021-02-02 07:25:49,898 p=6117 u=linux n=ansible | skipping: [aggr01] => (item=ip name-server 9.9.9.9)  => changed=false 
+  ansible_loop_var: item
+  item: ip name-server 9.9.9.9
+  skip_reason: Conditional result was False
+2021-02-02 07:25:49,903 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:49,904 p=6117 u=linux n=ansible | TASK [common : get the current ntp server configs] ********************************************************************************************
+2021-02-02 07:25:49,912 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:50,579 p=6301 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:50,579 p=6300 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:50,580 p=6301 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382 `" && echo ansible-tmp-1612250750.58-6301-148685716289382="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382 `" ) && sleep 0'
+2021-02-02 07:25:50,581 p=6300 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498 `" && echo ansible-tmp-1612250750.58-6300-200362994215498="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498 `" ) && sleep 0'
+2021-02-02 07:25:50,594 p=6301 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_command.py
+2021-02-02 07:25:50,598 p=6300 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_command.py
+2021-02-02 07:25:50,599 p=6301 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpIolOQs TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382/AnsiballZ_ios_command.py
+2021-02-02 07:25:50,600 p=6300 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpOwUcf7 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498/AnsiballZ_ios_command.py
+2021-02-02 07:25:50,601 p=6301 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:50,602 p=6300 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:50,609 p=6301 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:50,611 p=6300 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:51,697 p=6301 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6301-148685716289382/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:51,713 p=6117 u=linux n=ansible | ok: [aggr01] => changed=false 
+  invocation:
+    module_args:
+      auth_pass: null
+      authorize: null
+      commands:
+      - show running-config full | include ntp server
+      host: null
+      interval: 1
+      match: all
+      password: null
+      port: null
+      provider: null
+      retries: 10
+      ssh_keyfile: null
+      timeout: null
+      username: null
+      wait_for: null
+  stdout:
+  - |-
+    ntp server 216.239.35.4
+    ntp server 220.158.215.20
+  stdout_lines: <omitted>
+2021-02-02 07:25:51,894 p=6300 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250750.58-6300-200362994215498/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:51,907 p=6117 u=linux n=ansible | ok: [core01] => changed=false 
+  invocation:
+    module_args:
+      auth_pass: null
+      authorize: null
+      commands:
+      - show running-config full | include ntp server
+      host: null
+      interval: 1
+      match: all
+      password: null
+      port: null
+      provider: null
+      retries: 10
+      ssh_keyfile: null
+      timeout: null
+      username: null
+      wait_for: null
+  stdout:
+  - |-
+    ntp server 216.239.35.4
+    ntp server 220.158.215.20
+  stdout_lines: <omitted>
+2021-02-02 07:25:51,913 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:51,913 p=6117 u=linux n=ansible | TASK [common : debug] *************************************************************************************************************************
+2021-02-02 07:25:51,924 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:52,597 p=6117 u=linux n=ansible | ok: [core01] => 
+  get_config.stdout_lines:
+  - - ntp server 216.239.35.4
+    - ntp server 220.158.215.20
+2021-02-02 07:25:52,599 p=6117 u=linux n=ansible | ok: [aggr01] => 
+  get_config.stdout_lines:
+  - - ntp server 216.239.35.4
+    - ntp server 220.158.215.20
+2021-02-02 07:25:52,603 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:52,604 p=6117 u=linux n=ansible | TASK [common : set ntp server commands] *******************************************************************************************************
+2021-02-02 07:25:52,612 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:53,278 p=6364 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:53,278 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580 `" && echo ansible-tmp-1612250753.27-6364-180001346353580="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580 `" ) && sleep 0'
+2021-02-02 07:25:53,279 p=6365 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:53,279 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089 `" && echo ansible-tmp-1612250753.28-6365-197744115973089="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089 `" ) && sleep 0'
+2021-02-02 07:25:53,293 p=6364 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:53,298 p=6365 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:53,299 p=6364 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpInLd4t TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580/AnsiballZ_ios_config.py
+2021-02-02 07:25:53,300 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:53,300 p=6365 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmphxc3KS TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089/AnsiballZ_ios_config.py
+2021-02-02 07:25:53,301 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:53,308 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:53,310 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:54,325 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.27-6364-180001346353580/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:54,344 p=6117 u=linux n=ansible | ok: [core01] => (item=ntp server 220.158.215.20) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ntp server 220.158.215.20
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ntp server 220.158.215.20
+2021-02-02 07:25:54,394 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193 `" && echo ansible-tmp-1612250754.39-6364-267440296668193="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193 `" ) && sleep 0'
+2021-02-02 07:25:54,399 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250753.28-6365-197744115973089/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:54,416 p=6117 u=linux n=ansible | ok: [aggr01] => (item=ntp server 220.158.215.20) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ntp server 220.158.215.20
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ntp server 220.158.215.20
+2021-02-02 07:25:54,429 p=6364 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:54,430 p=6364 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmppyws95 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193/AnsiballZ_ios_config.py
+2021-02-02 07:25:54,431 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:54,450 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:54,476 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617 `" && echo ansible-tmp-1612250754.48-6365-28058253164617="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617 `" ) && sleep 0'
+2021-02-02 07:25:54,513 p=6365 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:54,513 p=6365 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpllW97j TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617/AnsiballZ_ios_config.py
+2021-02-02 07:25:54,515 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:54,533 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:55,461 p=6364 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.39-6364-267440296668193/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:55,472 p=6117 u=linux n=ansible | ok: [core01] => (item=ntp server 216.239.35.4) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ntp server 216.239.35.4
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ntp server 216.239.35.4
+2021-02-02 07:25:55,527 p=6365 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250754.48-6365-28058253164617/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:55,541 p=6117 u=linux n=ansible | ok: [aggr01] => (item=ntp server 216.239.35.4) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - ntp server 216.239.35.4
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: ntp server 216.239.35.4
+2021-02-02 07:25:55,544 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:55,544 p=6117 u=linux n=ansible | TASK [common : remove ntp server commands] ****************************************************************************************************
+2021-02-02 07:25:55,552 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:55,637 p=6117 u=linux n=ansible | skipping: [core01] => (item=ntp server 216.239.35.4)  => changed=false 
+  ansible_loop_var: item
+  item: ntp server 216.239.35.4
+  skip_reason: Conditional result was False
+2021-02-02 07:25:55,650 p=6117 u=linux n=ansible | skipping: [aggr01] => (item=ntp server 216.239.35.4)  => changed=false 
+  ansible_loop_var: item
+  item: ntp server 216.239.35.4
+  skip_reason: Conditional result was False
+2021-02-02 07:25:55,683 p=6117 u=linux n=ansible | skipping: [core01] => (item=ntp server 220.158.215.20)  => changed=false 
+  ansible_loop_var: item
+  item: ntp server 220.158.215.20
+  skip_reason: Conditional result was False
+2021-02-02 07:25:55,690 p=6117 u=linux n=ansible | skipping: [aggr01] => (item=ntp server 220.158.215.20)  => changed=false 
+  ansible_loop_var: item
+  item: ntp server 220.158.215.20
+  skip_reason: Conditional result was False
+2021-02-02 07:25:55,695 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:55,696 p=6117 u=linux n=ansible | TASK [common : snmp acl list] *****************************************************************************************************************
+2021-02-02 07:25:55,702 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:56,368 p=6466 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:56,368 p=6466 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523 `" && echo ansible-tmp-1612250756.37-6466-171217941661523="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523 `" ) && sleep 0'
+2021-02-02 07:25:56,379 p=6467 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:56,380 p=6467 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874 `" && echo ansible-tmp-1612250756.38-6467-28707983418874="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874 `" ) && sleep 0'
+2021-02-02 07:25:56,390 p=6466 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:56,392 p=6466 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmppZ22pG TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523/AnsiballZ_ios_config.py
+2021-02-02 07:25:56,392 p=6466 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:56,396 p=6467 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:25:56,399 p=6467 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpGX1gHt TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874/AnsiballZ_ios_config.py
+2021-02-02 07:25:56,400 p=6467 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:56,405 p=6466 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:56,409 p=6467 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:25:58,259 p=6466 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.37-6466-171217941661523/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:58,271 p=6117 u=linux n=ansible | changed: [core01] => changed=true 
+  banners: {}
+  commands:
+  - access-list 99 permit host 100.100.250.10
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - access-list 99 permit host 100.100.250.10
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  updates:
+  - access-list 99 permit host 100.100.250.10
+2021-02-02 07:25:58,364 p=6467 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250756.38-6467-28707983418874/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:25:58,374 p=6117 u=linux n=ansible | changed: [aggr01] => changed=true 
+  banners: {}
+  commands:
+  - access-list 99 permit host 100.100.250.10
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - access-list 99 permit host 100.100.250.10
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  updates:
+  - access-list 99 permit host 100.100.250.10
+2021-02-02 07:25:58,378 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:58,378 p=6117 u=linux n=ansible | TASK [common : get the current snmp-server config] ********************************************************************************************
+2021-02-02 07:25:58,388 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:25:59,026 p=6520 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:59,026 p=6520 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090 `" && echo ansible-tmp-1612250759.02-6520-163860955819090="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090 `" ) && sleep 0'
+2021-02-02 07:25:59,065 p=6520 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_command.py
+2021-02-02 07:25:59,066 p=6521 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:25:59,067 p=6521 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000 `" && echo ansible-tmp-1612250759.06-6521-276596602943000="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000 `" ) && sleep 0'
+2021-02-02 07:25:59,067 p=6520 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmp8zGo3s TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090/AnsiballZ_ios_command.py
+2021-02-02 07:25:59,068 p=6520 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:59,075 p=6520 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:59,091 p=6521 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_command.py
+2021-02-02 07:25:59,093 p=6521 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpWetayZ TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000/AnsiballZ_ios_command.py
+2021-02-02 07:25:59,094 p=6521 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:25:59,112 p=6521 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000/AnsiballZ_ios_command.py && sleep 0'
+2021-02-02 07:26:00,254 p=6520 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.02-6520-163860955819090/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:00,265 p=6117 u=linux n=ansible | ok: [core01] => changed=false 
+  invocation:
+    module_args:
+      auth_pass: null
+      authorize: null
+      commands:
+      - show running-config full | include snmp-server
+      host: null
+      interval: 1
+      match: all
+      password: null
+      port: null
+      provider: null
+      retries: 10
+      ssh_keyfile: null
+      timeout: null
+      username: null
+      wait_for: null
+  stdout:
+  - |-
+    snmp-server community network_as_code RO 99
+    snmp-server trap-source Loopback0
+    snmp-server contact fakrul@alam.rocks
+    snmp-server chassis-id
+  stdout_lines: <omitted>
+2021-02-02 07:26:00,348 p=6521 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250759.06-6521-276596602943000/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:00,357 p=6117 u=linux n=ansible | ok: [aggr01] => changed=false 
+  invocation:
+    module_args:
+      auth_pass: null
+      authorize: null
+      commands:
+      - show running-config full | include snmp-server
+      host: null
+      interval: 1
+      match: all
+      password: null
+      port: null
+      provider: null
+      retries: 10
+      ssh_keyfile: null
+      timeout: null
+      username: null
+      wait_for: null
+  stdout:
+  - |-
+    snmp-server community network_as_code RO 99
+    snmp-server trap-source Loopback0
+    snmp-server contact fakrul@alam.rocks
+    snmp-server chassis-id
+  stdout_lines: <omitted>
+2021-02-02 07:26:00,361 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:26:00,361 p=6117 u=linux n=ansible | TASK [common : debug] *************************************************************************************************************************
+2021-02-02 07:26:00,368 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:26:01,034 p=6117 u=linux n=ansible | ok: [core01] => 
+  get_config.stdout_lines:
+  - - snmp-server community network_as_code RO 99
+    - snmp-server trap-source Loopback0
+    - snmp-server contact fakrul@alam.rocks
+    - snmp-server chassis-id
+2021-02-02 07:26:01,037 p=6117 u=linux n=ansible | ok: [aggr01] => 
+  get_config.stdout_lines:
+  - - snmp-server community network_as_code RO 99
+    - snmp-server trap-source Loopback0
+    - snmp-server contact fakrul@alam.rocks
+    - snmp-server chassis-id
+2021-02-02 07:26:01,041 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:26:01,042 p=6117 u=linux n=ansible | TASK [common : set snmp-server configs] *******************************************************************************************************
+2021-02-02 07:26:01,052 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:26:01,713 p=6584 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:26:01,713 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103 `" && echo ansible-tmp-1612250761.71-6584-173379548611103="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103 `" ) && sleep 0'
+2021-02-02 07:26:01,722 p=6585 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:26:01,722 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157 `" && echo ansible-tmp-1612250761.72-6585-276342904990157="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157 `" ) && sleep 0'
+2021-02-02 07:26:01,734 p=6584 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:01,738 p=6585 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:01,740 p=6584 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpQ9HZ91 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103/AnsiballZ_ios_config.py
+2021-02-02 07:26:01,740 p=6585 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpUm4MaX TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157/AnsiballZ_ios_config.py
+2021-02-02 07:26:01,741 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:01,742 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:01,749 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:01,751 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:03,608 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.72-6585-276342904990157/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:03,628 p=6117 u=linux n=ansible | changed: [aggr01] => (item=snmp-server community network_as_code ro 99) => changed=true 
+  ansible_loop_var: item
+  banners: {}
+  commands:
+  - snmp-server community network_as_code ro 99
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - snmp-server community network_as_code ro 99
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server community network_as_code ro 99
+  updates:
+  - snmp-server community network_as_code ro 99
+2021-02-02 07:26:03,665 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139 `" && echo ansible-tmp-1612250763.67-6585-132901803135139="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139 `" ) && sleep 0'
+2021-02-02 07:26:03,673 p=6585 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:03,674 p=6585 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpW6C69p TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139/AnsiballZ_ios_config.py
+2021-02-02 07:26:03,675 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:03,680 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:03,756 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250761.71-6584-173379548611103/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:03,797 p=6117 u=linux n=ansible | changed: [core01] => (item=snmp-server community network_as_code ro 99) => changed=true 
+  ansible_loop_var: item
+  banners: {}
+  commands:
+  - snmp-server community network_as_code ro 99
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - snmp-server community network_as_code ro 99
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server community network_as_code ro 99
+  updates:
+  - snmp-server community network_as_code ro 99
+2021-02-02 07:26:03,878 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130 `" && echo ansible-tmp-1612250763.88-6584-242394980575130="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130 `" ) && sleep 0'
+2021-02-02 07:26:03,914 p=6584 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:03,915 p=6584 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpOoIGmR TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130/AnsiballZ_ios_config.py
+2021-02-02 07:26:03,916 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:03,934 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:04,697 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.67-6585-132901803135139/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:04,708 p=6117 u=linux n=ansible | ok: [aggr01] => (item=snmp-server trap-source Loopback0) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - snmp-server trap-source Loopback0
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server trap-source Loopback0
+2021-02-02 07:26:04,755 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214 `" && echo ansible-tmp-1612250764.75-6585-218690267971214="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214 `" ) && sleep 0'
+2021-02-02 07:26:04,772 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250763.88-6584-242394980575130/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:04,787 p=6117 u=linux n=ansible | ok: [core01] => (item=snmp-server trap-source Loopback0) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - snmp-server trap-source Loopback0
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server trap-source Loopback0
+2021-02-02 07:26:04,790 p=6585 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:04,791 p=6585 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpr9AXAy TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214/AnsiballZ_ios_config.py
+2021-02-02 07:26:04,793 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:04,809 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:04,859 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062 `" && echo ansible-tmp-1612250764.86-6584-48674973622062="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062 `" ) && sleep 0'
+2021-02-02 07:26:04,895 p=6584 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:04,896 p=6584 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpkyrkA1 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062/AnsiballZ_ios_config.py
+2021-02-02 07:26:04,897 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:04,915 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:05,817 p=6585 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.75-6585-218690267971214/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:05,828 p=6117 u=linux n=ansible | ok: [aggr01] => (item=snmp-server contact fakrul@alam.rocks) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - snmp-server contact fakrul@alam.rocks
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server contact fakrul@alam.rocks
+2021-02-02 07:26:05,892 p=6584 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250764.86-6584-48674973622062/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:05,904 p=6117 u=linux n=ansible | ok: [core01] => (item=snmp-server contact fakrul@alam.rocks) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - snmp-server contact fakrul@alam.rocks
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server contact fakrul@alam.rocks
+2021-02-02 07:26:05,909 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:26:05,909 p=6117 u=linux n=ansible | TASK [common : remove snmp-server configs] ****************************************************************************************************
+2021-02-02 07:26:05,920 p=6117 u=linux n=ansible | Read vars_file 'secrets/vault.yml'
+2021-02-02 07:26:06,599 p=6726 u=linux n=ansible | <192.168.199.1> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:26:06,600 p=6727 u=linux n=ansible | <192.168.199.2> ESTABLISH LOCAL CONNECTION FOR USER: linux
+2021-02-02 07:26:06,600 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795 `" && echo ansible-tmp-1612250766.6-6726-36071007215795="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795 `" ) && sleep 0'
+2021-02-02 07:26:06,601 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300 `" && echo ansible-tmp-1612250766.6-6727-43374865763300="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300 `" ) && sleep 0'
+2021-02-02 07:26:06,614 p=6726 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:06,618 p=6727 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:06,619 p=6726 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpi2lJat TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795/AnsiballZ_ios_config.py
+2021-02-02 07:26:06,620 p=6727 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmp1T2s1p TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300/AnsiballZ_ios_config.py
+2021-02-02 07:26:06,620 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:06,622 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:06,629 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:06,631 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:08,530 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6726-36071007215795/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:08,553 p=6117 u=linux n=ansible | changed: [core01] => (item=snmp-server community network_as_code RO 99) => changed=true 
+  ansible_loop_var: item
+  banners: {}
+  commands:
+  - no snmp-server community network_as_code RO 99
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - no snmp-server community network_as_code RO 99
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server community network_as_code RO 99
+  updates:
+  - no snmp-server community network_as_code RO 99
+2021-02-02 07:26:08,571 p=6117 u=linux n=ansible | skipping: [core01] => (item=snmp-server trap-source Loopback0)  => changed=false 
+  ansible_loop_var: item
+  item: snmp-server trap-source Loopback0
+  skip_reason: Conditional result was False
+2021-02-02 07:26:08,600 p=6117 u=linux n=ansible | skipping: [core01] => (item=snmp-server contact fakrul@alam.rocks)  => changed=false 
+  ansible_loop_var: item
+  item: snmp-server contact fakrul@alam.rocks
+  skip_reason: Conditional result was False
+2021-02-02 07:26:08,628 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250766.6-6727-43374865763300/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:08,659 p=6117 u=linux n=ansible | changed: [aggr01] => (item=snmp-server community network_as_code RO 99) => changed=true 
+  ansible_loop_var: item
+  banners: {}
+  commands:
+  - no snmp-server community network_as_code RO 99
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - no snmp-server community network_as_code RO 99
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server community network_as_code RO 99
+  updates:
+  - no snmp-server community network_as_code RO 99
+2021-02-02 07:26:08,685 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117 `" && echo ansible-tmp-1612250768.68-6726-54844590995117="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117 `" ) && sleep 0'
+2021-02-02 07:26:08,699 p=6117 u=linux n=ansible | skipping: [aggr01] => (item=snmp-server trap-source Loopback0)  => changed=false 
+  ansible_loop_var: item
+  item: snmp-server trap-source Loopback0
+  skip_reason: Conditional result was False
+2021-02-02 07:26:08,722 p=6726 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:08,723 p=6726 u=linux n=ansible | <192.168.199.1> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpd7o97I TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117/AnsiballZ_ios_config.py
+2021-02-02 07:26:08,724 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:08,732 p=6117 u=linux n=ansible | skipping: [aggr01] => (item=snmp-server contact fakrul@alam.rocks)  => changed=false 
+  ansible_loop_var: item
+  item: snmp-server contact fakrul@alam.rocks
+  skip_reason: Conditional result was False
+2021-02-02 07:26:08,744 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:08,809 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z `"&& mkdir "` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612 `" && echo ansible-tmp-1612250768.81-6727-131596640838612="` echo /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612 `" ) && sleep 0'
+2021-02-02 07:26:08,860 p=6727 u=linux n=ansible | Using module file /usr/lib/python2.7/dist-packages/ansible/modules/network/ios/ios_config.py
+2021-02-02 07:26:08,861 p=6727 u=linux n=ansible | <192.168.199.2> PUT /home/linux/.ansible/tmp/ansible-local-6117_pB72z/tmpc7Unv3 TO /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612/AnsiballZ_ios_config.py
+2021-02-02 07:26:08,863 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'chmod u+x /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612/ /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:08,881 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'python3 /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612/AnsiballZ_ios_config.py && sleep 0'
+2021-02-02 07:26:10,436 p=6726 u=linux n=ansible | <192.168.199.1> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.68-6726-54844590995117/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:10,448 p=6117 u=linux n=ansible | changed: [core01] => (item=snmp-server chassis-id) => changed=true 
+  ansible_loop_var: item
+  banners: {}
+  commands:
+  - no snmp-server chassis-id
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - no snmp-server chassis-id
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server chassis-id
+  updates:
+  - no snmp-server chassis-id
+2021-02-02 07:26:10,502 p=6727 u=linux n=ansible | <192.168.199.2> EXEC /bin/sh -c 'rm -f -r /home/linux/.ansible/tmp/ansible-local-6117_pB72z/ansible-tmp-1612250768.81-6727-131596640838612/ > /dev/null 2>&1 && sleep 0'
+2021-02-02 07:26:10,515 p=6117 u=linux n=ansible | changed: [aggr01] => (item=snmp-server chassis-id) => changed=true 
+  ansible_loop_var: item
+  banners: {}
+  commands:
+  - no snmp-server chassis-id
+  invocation:
+    module_args:
+      after: null
+      auth_pass: null
+      authorize: null
+      backup: false
+      backup_options: null
+      before: null
+      defaults: false
+      diff_against: null
+      diff_ignore_lines: null
+      host: null
+      intended_config: null
+      lines:
+      - no snmp-server chassis-id
+      match: line
+      multiline_delimiter: '@'
+      parents: null
+      password: null
+      port: null
+      provider: null
+      replace: line
+      running_config: null
+      save_when: never
+      src: null
+      ssh_keyfile: null
+      timeout: null
+      username: null
+  item: snmp-server chassis-id
+  updates:
+  - no snmp-server chassis-id
+2021-02-02 07:26:10,517 p=6117 u=linux n=ansible | META: ran handlers
+2021-02-02 07:26:10,517 p=6117 u=linux n=ansible | META: ran handlers
+2021-02-02 07:26:10,586 p=6117 u=linux n=ansible | PLAY RECAP ************************************************************************************************************************************
+2021-02-02 07:26:10,587 p=6117 u=linux n=ansible | aggr01                     : ok=11   changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2021-02-02 07:26:10,587 p=6117 u=linux n=ansible | core01                     : ok=11   changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2021-02-02 07:26:10,622 p=6135 u=linux n=ansible | shutdown complete
+2021-02-02 07:26:10,686 p=6137 u=linux n=ansible | shutdown complete

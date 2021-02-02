@@ -15,14 +15,17 @@ bgp:
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
+
      - peer: 100.100.249.2
        remote-as: 65111
        ebgp: true
+
     ipv6:
      - peer: "2001:db8:901:beef::1"
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
+
     networks:
       - prefix: 100.100.250.0
         masklen: 24
