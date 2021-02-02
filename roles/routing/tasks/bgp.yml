@@ -10,6 +10,11 @@
       neighbors:
       - neighbor: "{{ item.peer }}"
         remote_as: "{{ item.remote_as }}"
+      address_family:
+      - afi: ipv4
+        neighbors:
+        - neighbor: "{{ item.peer }}"
+          activate: true
   when: 
     - bgp is defined
     - bgp.neighbors is defined
@@ -54,7 +59,12 @@
       - neighbor: "{{ item.peer }}"
         remote_as: "{{ item.remote_as }}"
         update_source: "{{ item.update_source }}"
-  when: 
+      address_family:
+      - afi: ipv4
+        neighbors:
+        - neighbor: "{{ item.peer }}"
+          activate: true
+  when:
     - bgp is defined
     - bgp.neighbors is defined
     - bgp.neighbors.ipv4 is defined
@@ -63,6 +73,7 @@
   tags:
   - bgp
   - bgp_v4
+  - bgp99
 
 - name: configure bgp - ibgp v6 peers
   ios_bgp:
@@ -89,54 +100,25 @@
   - bgp
   - bgp_v6
 
-- name: configure bgp - redistribute ospf
+- name: configure bgp - ibgp v4 - advertise network
   ios_bgp:
     config:
       bgp_as: "{{ bgp['local_as'] }}"
+      log_neighbor_changes: True
+      router_id: "{{ router_id }}"
       address_family:
-        - afi: ipv4
-          redistribute:
-            - protocol: ospf
-              id: 100
-  when: 
+      - afi: ipv4
+        networks:
+        - prefix: "{{ item.prefix }}"
+          masklen: "{{ item.masklen }}"
+  when:
     - bgp is defined
-    - bgp.redist is defined
-    - bgp.redist.ospf is defined
+    - item.prefix is defined
+  loop: "{{ bgp.neighbors.networks }}"
   tags:
   - bgp
   - bgp_v4
-
-- name: configure bgp - redistribute ospfv3
-  ios_bgp:
-    config:
-      bgp_as: "{{ bgp['local_as'] }}"
-      address_family:
-        - afi: ipv6
-          redistribute:
-            - protocol: ospf
-              id: 100
-  when: 
-    - bgp is defined
-    - bgp.redist is defined
-    - bgp.redist.ospfv3 is defined
-  tags:
-  - bgp
-  - bgp_v6
-
-- name: configure bgp - redistribute ospfv3 and include connected networks
-  ios_config:
-    lines:
-      - redistribute ospf 100 include-connected
-    parents:
-      - router bgp {{ bgp['local_as'] }}
-      - address-family ipv6 unicast
-  when:
-    - bgp is defined
-    - bgp.redist is defined
-    - bgp.redist.ospfv3 is defined
-  tags:
-  - bgp
-  - bgp_v6
+  - bgp99
 
 - name: configure bgp - ibgp v4 default originate
   ios_config:

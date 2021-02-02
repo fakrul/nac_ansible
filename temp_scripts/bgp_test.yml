@@ -1,0 +1,22 @@
+---
+- hosts: routers-test
+  gather_facts: no
+  vars_files:
+    - "secrets/vault.yml"
+
+  tasks:
+  - name: configure global bgp as 64496
+    cisco.ios.ios_bgp:
+      config:
+        bgp_as: 64496
+        router_id: 100.100.100.250
+        log_neighbor_changes: true
+        neighbors:
+        - neighbor: 100.100.250.1
+          remote_as: 65534
+        networks:
+        - prefix: 100.100.250.0
+          route_map: RMAP_1
+        - prefix: 192.0.2.0
+          masklen: 23
+      operation: merge

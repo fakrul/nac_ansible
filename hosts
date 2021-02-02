@@ -1,8 +1,19 @@
 [routers]
-core01 ansible_host=100.100.100.1
-aggr01 ansible_host=100.100.100.2
+core01 ansible_host=192.168.199.1
+aggr01 ansible_host=192.168.199.2
+
+[routers-test]
+router-test ansible_host=100.100.250.250
 
 [routers:vars]
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_user=cisco
+ansible_ssh_pass= {{ssh_password}}
+ansible_port=22
+ansible_python_interpreter=python3
+
+[routers-test:vars]
 ansible_connection=network_cli
 ansible_network_os=ios
 ansible_user=cisco

@@ -1,0 +1,38 @@
+---
+hostname: router-test
+domain_name: alam.rocks
+router_id: 100.100.100.250
+rtr_role: aggr
+
+bgp:
+  local_as: 64496
+  neighbors:
+    ipv4:
+     - peer: 100.100.250.1
+       remote_as: 65534
+       ibgp: true
+       update_source: Loopback0
+     - peer: 100.100.250.2
+       remote_as: 65534
+       ibgp: true
+       update_source: Loopback0
+    networks:
+      - prefix: 103.12.176.0
+        masklen: 23
+      - prefix: 103.12.178.0
+        masklen: 24
+      - prefix: 118.179.30.0
+        masklen: 24
+
+interfaces:
+  - ios_if: "GigabitEthernet0/0"
+    desc: "connected with aggr01"
+    enabled: true
+    ipv4: "100.100.250.250/24"
+
+  - ios_if: "loopback0"
+    desc: "Loopback"
+    enabled: true
+    ipv4: "100.100.100.250/32"
+
+

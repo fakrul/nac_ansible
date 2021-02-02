@@ -15,12 +15,17 @@ bgp:
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
-       default_originate: true
+     - peer: 100.100.249.2
+       remote-as: 65111
+       ebgp: true
     ipv6:
      - peer: "2001:db8:901:beef::1"
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
+    networks:
+      - prefix: 100.100.250.0
+        masklen: 24
 
 interfaces:
   - ios_if: "GigabitEthernet0/0"
@@ -44,6 +49,11 @@ interfaces:
     ospfv3:
       area: "0.0.0.0"
       passive: true
+
+  - ios_if: "GigabitEthernet0/2"
+    desc: "aggr01-client01"
+    enabled: true
+    ipv4: "100.100.249.1/30"
 
   - ios_if: "loopback0"
     desc: "Loopback"

@@ -16,6 +16,11 @@ bgp:
        ibgp: true
        update_source: Loopback0
        default_originate: true
+
+     - peer: 100.100.251.2
+       remote_as: 65101
+       ebgp: true
+
     ipv6:
      - peer: "2001:db8:901:beef::2"
        remote_as: 65534
@@ -37,6 +42,12 @@ interfaces:
     desc: "core01-internet"
     enabled: true
     ipv4: "dhcp"
+
+  - ios_if: "GigabitEthernet0/2"
+    desc: "core01-upstream01"
+    enabled: true
+    ipv4: "100.100.251.1/30"
+    ipv6: "2001:db8:251::a/64"
 
   - ios_if: "loopback0"
     desc: "Loopback"

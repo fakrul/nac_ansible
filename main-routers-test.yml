@@ -1,0 +1,11 @@
+---
+- hosts: routers-test
+  gather_facts: no
+  vars_files:
+    - "secrets/vault.yml"
+
+  tasks:
+  - import_role:
+      name: interfaces
+  - import_role:
+      name: routing
