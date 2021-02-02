@@ -6,9 +6,6 @@ rtr_role: core
 
 bgp:
   local_as: 65534
-  redist:
-    ospf: true
-    ospfv3: true
   neighbors:
     ipv4:
      - peer: 100.100.100.2

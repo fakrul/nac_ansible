@@ -24,6 +24,7 @@
   tags:
   - bgp
   - bgp_v4
+  - bgp_99
 
 - name: configure bgp - ebgp v6 peers
   ios_bgp:
@@ -73,7 +74,6 @@
   tags:
   - bgp
   - bgp_v4
-  - bgp99
 
 - name: configure bgp - ibgp v6 peers
   ios_bgp:

@@ -6,18 +6,14 @@ rtr_role: aggr
 
 bgp:
   local_as: 65534
-  redist:
-    ospf: true
-    ospfv3: true
   neighbors:
     ipv4:
      - peer: 100.100.100.1
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
-
      - peer: 100.100.249.2
-       remote-as: 65111
+       remote_as: 65511
        ebgp: true
 
     ipv6:
