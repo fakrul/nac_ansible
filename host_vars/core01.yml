@@ -16,6 +16,11 @@ bgp:
        ibgp: true
        update_source: Loopback0
        default_originate: true
+
+     - peer: 100.100.251.2
+       remote_as: 65101
+       ebgp: true
+
     ipv6:
      - peer: "2001:db8:901:beef::2"
        remote_as: 65534

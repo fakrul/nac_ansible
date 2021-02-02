@@ -21,6 +21,9 @@ bgp:
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
+    networks:
+      - prefix: 100.100.250.0
+        masklen: 24
 
 interfaces:
   - ios_if: "GigabitEthernet0/0"
