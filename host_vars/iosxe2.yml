@@ -1,25 +1,38 @@
 ---
-hostname: iosxe1
+hostname: iosxe2
 domain_name: alam.rocks
 router_id: 100.100.100.2
 rtr_role: aggr
+name_servers:
+  - 4.4.4.4
+  - 1.1.1.1
+  - 9.9.9.9
 
 bgp:
   local_as: 65534
   neighbor:
+    ipv4:
      - peer: 100.100.100.1
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
+       default_originate: true
 
+    ipv6:
      - peer: "2001:db8:901:beef::1"
        remote_as: 65534
        ibgp: true
        update_source: Loopback0
 
 interfaces:
-  - ios_if: "GigabitEthernet0/0"
-    desc: "aggr01-core01"
+  #- ios_if: "GigabitEthernet1"
+    #desc: "management interface - do not change"
+    #enabled: true
+    #ipv4: dhcp
+    #ipv6: fd5d:12c9:2201:1::2/64
+
+  - ios_if: "GigabitEthernet2"
+    desc: "iosxe2-iosxe1"
     enabled: true
     ipv4: "192.168.100.2/30"
     ipv6: "2001:db8:201::f/64"
@@ -27,18 +40,6 @@ interfaces:
       area: "0.0.0.0"
     ospfv3:
       area: "0.0.0.0"
-
-  - ios_if: "GigabitEthernet0/1"
-    desc: "server_block"
-    enabled: true
-    ipv4: "100.100.250.1/24"
-    ipv6: "2001:db8:abcd::f/64"
-    ospf:
-      area: "0.0.0.0"
-      passive: true
-    ospfv3:
-      area: "0.0.0.0"
-      passive: true
 
   - ios_if: "loopback0"
     desc: "Loopback"

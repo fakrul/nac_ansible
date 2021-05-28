@@ -1,31 +1,34 @@
 ---
 ## tasks file for interfaces
-- name: configure sub-interfaces first
+- name: subinterface configuration
   ios_config:
     src: subints.j2
 
-- name: configure interfaces - status and descriptions
-  ios_interfaces:
+- name: configuration interface
+  cisco.ios.ios_interfaces:
     config:
-      - name: "{{ item.ios_if }}"
-        description: "{{ item.desc }}"
-        enabled: "{{ item.enabled }}"
+    - name: "{{ item.ios_if }}"
+      description: "{{ item.desc }}"
+      enabled: "{{ item.enabled }}"
+  when: item.enabled is defined
   loop: "{{ interfaces }}"
 
-- name: configure interfaces - l3 ipv4
-  ios_l3_interfaces:
+- name: configuration interface ipv4
+  cisco.ios.ios_l3_interfaces:
     config:
-      - name: "{{ item.ios_if }}"
-        ipv4:
-        - address: "{{ item.ipv4 }}"
+    - name: "{{ item.ios_if }}"
+      ipv4:
+      - address: "{{ item.ipv4 }}"
+    state: merged
   when: item.ipv4 is defined
   loop: "{{ interfaces }}"
 
-- name: configure interfaces - l3 ipv6
-  ios_l3_interfaces:
+- name: configuration interface ipv6
+  cisco.ios.ios_l3_interfaces:
     config:
-      - name: "{{ item.ios_if }}"
-        ipv6:
-        - address: "{{ item.ipv6 }}"
+    - name: "{{ item.ios_if }}"
+      ipv6:
+      - address: "{{ item.ipv6 }}"
+    state: merged
   when: item.ipv6 is defined
   loop: "{{ interfaces }}"

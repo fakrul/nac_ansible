@@ -1,4 +1,5 @@
 secrets/vault_password.yml
+secrets/vault.yml
 ansible.log
 .DS_Store
 

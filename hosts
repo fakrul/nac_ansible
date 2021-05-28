@@ -1,22 +1,20 @@
 [routers]
-core01 ansible_host=192.168.199.1
-aggr01 ansible_host=192.168.199.2
+iosxe1 ansible_port=2222 ansible_host=localhost
+iosxe2 ansible_port=2204 ansible_host=localhost
 
 [routers-test]
-router-test ansible_host=100.100.250.250
+router-test ansible_port=2205 ansible_host=localhost
 
 [routers:vars]
 ansible_connection=network_cli
 ansible_network_os=ios
-ansible_user=cisco
-ansible_ssh_pass= {{ssh_password}}
-ansible_port=22
+ansible_user=vagrant
+ansible_password=vagrant
 ansible_python_interpreter=python3
 
 [routers-test:vars]
 ansible_connection=network_cli
 ansible_network_os=ios
 ansible_user=cisco
-ansible_ssh_pass= {{ssh_password}}
-ansible_port=22
+ansible_password=vagrant
 ansible_python_interpreter=python3

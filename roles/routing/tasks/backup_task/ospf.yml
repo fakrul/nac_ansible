@@ -1,0 +1,32 @@
+---
+# tasks file for routing
+#
+- name: ospf process
+  ios_config:
+    lines:
+      - "router ospf 100"
+
+- name: ospf process - router id
+  ios_config:
+    lines: 
+      - "router-id {{ router_id }}"
+    parents: router ospf 100
+
+- name: ospf interfaces
+  ios_config:
+    lines:
+      - ip ospf 100 area {{ item.ospf.area }}
+    parents: interface {{ item.ios_if }}
+  when: item.ospf is defined
+  loop: "{{ interfaces }}"
+
+- name: ospf interfaces - passive
+  ios_config:
+    lines:
+      - passive-interface {{ item.ios_if }}
+    parents: router ospf 100
+  when: 
+    - item.ospf is defined
+    - item.ospf.passive is defined
+  loop: "{{ interfaces }}"
+ 

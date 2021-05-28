@@ -1,13 +1,11 @@
-dns_servers:
-    - ip name-server 8.8.8.8
-    - ip name-server 9.9.9.9
-
 ntp_servers:
-    - ntp server 220.158.215.20
-    - ntp server 216.239.35.4
+    - 220.158.215.20
+    - 216.239.35.4
 
 snmp:
-  ipv4: 100.100.250.10
+  ipv4:
+    - 100.100.250.100
+    - 100.100.250.200
 
 snmp_server:
     - snmp-server community network_as_code ro 99

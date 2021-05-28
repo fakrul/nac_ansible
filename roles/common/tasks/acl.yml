@@ -1,7 +1,15 @@
-- name: snmp acl list
-  ios_config:
-    lines:
-      - access-list 99 permit host {{ snmp['ipv4'] }} 
-  tags:
-    - acl
-    - acl_ipv4
+- name: configure acl for snmp
+  cisco.ios.ios_acls:
+    config:
+    - afi: ipv4
+      acls:
+      - name: 99
+        acl_type: standard
+        aces:
+        - grant: permit
+          source:
+            address: 100.100.250.100
+        - grant: permit
+          source:
+            address: 100.100.250.200
+    state: merged

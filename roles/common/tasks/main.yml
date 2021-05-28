@@ -1,9 +1,9 @@
 ---
 # tasks file for roles/common
 
-- name: include nameserver configuration
-  include: nameserver.yml
-- name: include ntp configuration
+- name: configure hostname and domain
+  include: hostname_domain.yml
+- name: configure ntp
   include: ntp.yml
 - name: include acl configuration 
   include: acl.yml
