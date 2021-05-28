@@ -1,0 +1,26 @@
+---
+# tasks file for routing
+#
+- name: configure bgp - ibgp v4 peers
+  cisco.ios.ios_bgp_global:
+    config:
+      as_number: "{{ bgp['local_as'] }}"
+      #log_neighbor_changes: True
+      bgp:
+        router_id: "{{ router_id }}"
+        log_neighbor_changes: true
+      neighbor:
+      - address: "{{ item.peer }}"
+        remote_as: "{{ item.remote_as }}"
+        #update_source: "{{ item.update_source }}"
+        description: " {{ item.remote_as }} "
+    state: merged   
+  when:
+    - bgp is defined
+    - bgp.neighbor is defined
+    - bgp.neighbor.ipv4 is defined
+    - item.ibgp is defined
+  loop: "{{ bgp.neighbor }}"
+  tags:
+  - bgp
+  - bgp_v4

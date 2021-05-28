@@ -1,25 +1,10 @@
 ---
 # tasks file for ntp
 #
-- name: get the current ntp server configs
-  ios_command:
-    commands:
-      - "show running-config full | include ntp server"
-  register: get_config
-
-- debug: var=get_config.stdout_lines
-
-- name: set ntp server commands
+- name: configure ntp server
+  cisco.ios.ios_ntp:
+    server: "{{ item }}"
+    source_int: Loopback0
+    logging: false
+    state: present
   with_items: "{{ ntp_servers }}"
-  ios_config:
-    lines:
-        - "{{ item }}"
-  register: set_ntp
-
-- name: remove ntp server commands
-  when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
-  with_items: "{{ get_config.stdout_lines[0] }}"
-  register: remove_ntp
-  ios_config:
-    lines:
-      - "no {{ item }}"

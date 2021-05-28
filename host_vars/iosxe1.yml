@@ -1,9 +1,12 @@
 ---
-hostname: core01
-
+hostname: iosxe1
 domain_name: alam.rocks
 router_id: 100.100.100.1
 rtr_role: core
+name_servers:
+  - 4.4.4.4
+  - 1.1.1.1
+  - 9.9.9.9
 
 bgp:
   local_as: 65534
@@ -22,13 +25,14 @@ bgp:
        update_source: Loopback0
 
 interfaces:
-  - ios_if: "GigabitEthernet0/0"
-    desc: "core01-internet"
-    enabled: true
-    ipv4: "dhcp"
+  #- ios_if: "GigabitEthernet1"
+    #desc: "management interface - do not change"
+    #enabled: true
+    #ipv4: dhcp
+    #ipv6: fd5d:12c9:2201:1::1/64
 
-  - ios_if: "GigabitEthernet0/1"
-    desc: "core01-aggr01"
+  - ios_if: "GigabitEthernet2"
+    desc: "iosxe1-iosxe2"
     enabled: true
     ipv4: "192.168.100.1/30"
     ipv6: "2001:db8:201::a/64"
@@ -37,11 +41,10 @@ interfaces:
     ospfv3:
       area: "0.0.0.0"
 
-  - ios_if: "GigabitEthernet0/2"
-    desc: "core01-upstream01"
-    enabled: true
-    ipv4: "100.100.251.1/30"
-    ipv6: "2001:db8:251::a/64"
+  - ios_if: "GigabitEthernet3"
+    desc: "free-interface"
+    enabled: false
+    ipv4: "192.168.250.1/30"
 
   - ios_if: "loopback0"
     desc: "Loopback"

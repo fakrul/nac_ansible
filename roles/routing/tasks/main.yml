@@ -4,8 +4,8 @@
 - name: include ospf routing
   include: ospf.yml
 
-- name: include ospfv3 routing
-  include: ospfv3.yml
+#- name: include ospfv3 routing
+#  include: ospfv3.yml
 
-- name: include bgp routing
-  include: bgp.yml
+#- name: include bgp routing
+#  include: bgp_global.yml

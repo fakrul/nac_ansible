@@ -1,0 +1,23 @@
+# tasks file for hostname and domain
+#
+- name: setup hostname
+  cisco.ios.ios_system:
+    hostname: "{{ hostname }}"
+  tags:
+    - routers
+
+- name: setup domain name
+  cisco.ios.ios_system:
+    domain_name: "{{ domain_name }}"
+    name_servers: "{{ name_servers }}"
+    lookup_enabled: no
+  tags:
+    - routers
+
+- name: setup dns server
+  cisco.ios.ios_system:
+    name_servers: "{{ name_servers }}"
+    lookup_enabled: no
+  tags:
+    - routers
+

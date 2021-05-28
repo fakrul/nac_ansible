@@ -1,7 +1,7 @@
 ---
 # tasks file for routing
 #
-- name: ospf process
+- name: ospf v2 configuration
   ios_config:
     lines:
       - "router ospf 100"
@@ -29,3 +29,4 @@
     - item.ospf is defined
     - item.ospf.passive is defined
   loop: "{{ interfaces }}"
+ 

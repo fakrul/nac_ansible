@@ -2,7 +2,7 @@ no ip domain lookup
 !
 service password-encryption
 username cisco privilege 15 password cisco2020
-enable secret 0 2020
+enable secret 0 cisco2020
 ip domain name alam.rocks
 hostname aggr01
 !
